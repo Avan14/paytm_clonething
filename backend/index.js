@@ -1,11 +1,12 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import { z } from 'zod';
-import { Transaction,User } from './db/database';
+
 import mainRouter from "./routes/routes" 
+import cors from "cors"
 
 const app = express();
 
+app.use(cors());
 app.use("/api/v1",mainRouter)
 
 app.listen(3000,()=>{
