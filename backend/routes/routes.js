@@ -1,6 +1,6 @@
 import express from "express";
 import userRouter from "./userRoute"
-import TransactionRouter from "./TransactionRoute"
+import TransactionRouter from "./account"
 
 export const router = express.Router();
 
