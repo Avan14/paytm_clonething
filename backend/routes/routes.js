@@ -1,16 +1,16 @@
-import express from "express";
-import userRouter from "./userRoute"
-import TransactionRouter from "./account"
+const express = require("express");
+const userRouter = require("./userRoute");
+const accountRouter = require("./account");
 
-export const router = express.Router();
+const router = express.Router();
 
-router.get("/user",userRouter);
-router.get("/transaction",TransactionRouter);
+router.use("/user", userRouter);
+router.use("/account", accountRouter);
 
+router.all("/*", (req, res) => {
+    res.status(404).json({
+        msg: "Invalid request"
+    });
+});
 
-router.get("/*",(req,res)=>{
-    res.json({
-        msg:"invald request"
-    }).status(404)
-})
-
+module.exports = router;

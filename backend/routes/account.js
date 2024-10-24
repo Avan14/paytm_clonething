@@ -1,8 +1,8 @@
-import express from "express";
-import auth from "../middleware/loginMiddleware";
-import z from "zod";
-import mongoose from "mongoose";
-import account from "../db/database";
+const express = require("express");
+const auth = require("../middleware/loginMiddleware");
+const z = require("zod");
+const mongoose = require("mongoose");
+const account = require("../db/database");
 
 const accountRouter = express.Router();
 
@@ -80,4 +80,4 @@ accountRouter.post("/transfer", auth, async (req, res) => {
   }
 });
 
-export default accountRouter;
+module.exports = accountRouter;
