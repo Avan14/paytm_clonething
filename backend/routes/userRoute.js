@@ -39,7 +39,7 @@ userRouter.post('/signup', async (req, res, next) => {
     });
 
     const userId = user._id;
-    const balance = 1 + Math.random() * 10000;
+    const balance = Math.ceil(1 + Math.random() * 10000);
 
     await Account.create({
         userId,
