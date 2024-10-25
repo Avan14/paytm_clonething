@@ -1,15 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {Signup} from "./pages/signup";
+import {Signin} from "./pages/signin";
+import {DashBoard} from "./pages/dashboard";
+import {SendMoney} from "./pages/sendmoney";
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      
+      <BrowserRouter>
+        <Routes>
+          <Route path="/signup" element={<Signup></Signup>}></Route>
+          <Route path="/signin" element={<Signin></Signin>}></Route>
+          <Route path="/dashboard" element={<DashBoard></DashBoard>}></Route>
+          <Route path="/sendmoney" element={<SendMoney></SendMoney>}></Route>
+        </Routes>
+      </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
